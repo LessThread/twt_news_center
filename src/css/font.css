@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "Noto Sans SC";
+  src: url('../assets/Noto-Sans-SC-Bold/NotoSansSC-6.ttf');
+}
+
+@font-face {
+    font-family: "Product-Sans";
+    src: url('../assets/Noto-Sans-SC-Bold/Product-Sans/Product-Sans-Italic-4.ttf');
+  }
