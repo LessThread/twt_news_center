@@ -103,6 +103,9 @@ export default {
   cursor:pointer;
   height: auto;
   min-width: 100px;
+  animation: FadeInOut ease 2s; 
+  animation-iteration-count: 1; /*设置动画播放次数*/
+  animation-fill-mode: forwards;
 }
 
 .InfoCard{
@@ -119,6 +122,7 @@ export default {
   justify-content: space-between;
   align-items: center;
   position: relative;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   
 }
 
@@ -131,6 +135,7 @@ export default {
   border-radius: 15px;
   min-height: 10vh;
   background-color: rgb(244, 246, 247);
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .InfoCard .img_box
@@ -236,4 +241,8 @@ export default {
   margin-left: 10.5%;
 }
 
+@keyframes FadeInOut{
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}
 </style>

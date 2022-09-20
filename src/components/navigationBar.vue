@@ -74,6 +74,9 @@ export default {
   flex-direction:row;
   align-items:center;
 }
+
+
+
 [class^="title-icon-"]{
   margin-left:6.5%;
 }
@@ -104,5 +107,11 @@ export default {
 .main-routers-text{
   margin-left:8%;
   font-size:1.3rem;
+  
+}
+
+.main-routers-text:hover{
+  text-decoration: dashed;
+  font-weight:bold;
 }
 </style>

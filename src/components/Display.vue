@@ -9,7 +9,6 @@
         </div>
 
         <div class="text-container">
-
             <div class="header-container">
                 <div class="class-container">
                 {{'来源：'+ class_}}&ensp;&ensp;&ensp;&ensp;
@@ -29,8 +28,8 @@
                 </div>
             </div>
 
-            <div class="content-container">
-                <v-md-preview :text="content_s"></v-md-preview>
+            <div class="content-container" style="max-width: 90%;">
+                <v-md-preview :text="content_s" style="max-width: 100%;"></v-md-preview>
                 <!-- <div class="text-child" v-html="content_s"></div> -->
             </div>
         </div>
@@ -74,7 +73,7 @@ export default{
     },
     computed:{
         content_s(){
-            console.log(this.content)
+            //console.log(this.content)
             if(this.content!=null) return this.content
             else return "加载中"
         },
@@ -101,16 +100,18 @@ export default{
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     width: 100%;
-    height: 30vh;
+    height: 10%;
     overflow: hidden;
     border:1px rgba(0, 0, 0, 0.1) solid;
-    border-radius:2vh;
+    border-radius:20px;
+    max-height: 400px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .header-img-container>img{
-    width: 60%;
-    padding-left:20%;
-    padding-right:20%;
+    width: 100%;
+    /* padding-left:20%;
+    padding-right:20%; */
     background: #FFFFFF;
 }
 

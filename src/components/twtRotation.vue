@@ -7,7 +7,7 @@
         <!--图片数组-->
         <div v-for="(item,index) in list" :key="index">
             
-            <transition name="slide-right">
+            
                 <div>
                     <div @click="goto(item.url)" v-show="index === activeIndex" class="carouselContent" style="
                         position: absolute;
@@ -43,11 +43,13 @@
                         ">
                     </div> -->
 
+                <transition name="slide-right">
                     <div @click="goto(item.url)" v-show="index === activeIndex" class="carouselContent">
                     <img :src="item.imgPath" class="R-img">
                     </div>
+                </transition>
                 </div>
-            </transition>
+            
 
             <div v-show="index === activeIndex" class="textContent" @click="goto(item.url)" :id="'r'+index" 
             style=""
@@ -96,6 +98,9 @@
     max-height: 520px;
     height: 70vh;
     /* background-color: yellow; */
+    animation: FadeInOut ease 3s; 
+  animation-iteration-count: 1; /*设置动画播放次数*/
+  animation-fill-mode: forwards;
 }
 .textContent{
     position: absolute;
@@ -346,7 +351,7 @@
         border-radius: 25px;
         background-color: rgb(250, 250, 250);
         height: 100%;
-        
+        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
  
     /*子绝父相定位——使指示器定位在轮播图下边缘*/
@@ -393,7 +398,7 @@
     .slide-right-enter-active,
     .slide-right-leave-active {
         will-change: transform;
-        transition: all 500ms;
+        transition: all 1000ms;
     }
  
     .slide-right-enter {

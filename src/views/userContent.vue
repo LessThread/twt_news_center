@@ -4,7 +4,15 @@
     <div class="dis">
       <navigationBar/>
       <titleBar/>
-      <router-view/>
+      <!-- <transition :name="transitionName">
+        <router-view/>
+      </transition> -->
+
+      <router-view v-slot="{ Component }">
+        <transition :name="transitionName">
+            <component :is="Component" />
+        </transition>
+      </router-view>
     </div>
 
     <!-- <div class="err" style="position: absolute;text-align: center;background-color:#F7B888;width: 10vw;z-index: 6;" v-show="zoom">
@@ -37,13 +45,28 @@ export default {
     navigationBar,
     titleBar,
     LoginPop,
-    NavigationBarLite
+    NavigationBarLite,
 },
 data() {
   return {
     zoom:0,
+    transitionName:"slide"
   }
 },
+watch: {
+    //使用watch 监听$router的变化
+    $route(to, from) {
+      //如果to索引大于from索引,判断为前进状态,反之则为后退状态
+      console.log(to, "to");
+      console.log(from, "from");
+      if (to.meta.index > from.meta.index) {
+        //设置动画名称
+        this.transitionName = "slide-left";
+      } else {
+        this.transitionName = "slide-right";
+      }
+    },
+  },
   mounted(){
     //alert(this.$route.path);
     if(this.$route.path==="/"){this.$router.push("/RecentNews?id=0")}
@@ -96,6 +119,32 @@ data() {
 </script>
 
 <style>
+.slide-right-enter-active, .slide-right-leave-active, .slide-left-enter-active, .slide-left-leave-active {
+      will-change: transform;
+      transition: all 500ms;
+      position: absolute;
+    }
+
+    .slide-right-enter {
+      opacity: 0;
+      /* transform: translate3d(-100%, 0, 0); */
+    }
+
+    .slide-right-leave-active {
+      opacity: 0;
+      /* transform: translate3d(100%, 0, 0); */
+    }
+
+    .slide-left-enter {
+      opacity: 0;
+      /* transform: translate3d(100%, 0, 0); */
+    }
+
+    .slide-left-leave-active {
+      opacity: 0;
+      /* transform: translate3d(-100%, 0, 0); */
+    }
+
 
 .user-content{
   width:100vw;

@@ -14,7 +14,7 @@
             <Card
             :img="item.coverImageId"
             :words="item.title"
-            :NewsClass="item.origin"
+            :NewsClass="item.class"
             :NewsTime="item.releaseTime.slice(0,-9)"
             :url="item.id"
             :Top="item.status"
@@ -27,7 +27,7 @@
             <Card
             :img="item.coverImageId"
             :words="item.title"
-            :NewsClass="item.origin"
+            :NewsClass="item.class"
             :NewsTime="item.releaseTime.slice(0,-9)"
             :url="item.id"
             :Top="item.status"
@@ -40,7 +40,7 @@
             <Card
             :img="item.coverImageId"
             :words="item.title"
-            :NewsClass="item.origin"
+            :NewsClass="item.class"
             :NewsTime="item.releaseTime.slice(0,-9)"
             :url="item.id"
             :Top="item.status"
@@ -96,6 +96,30 @@ export default
     },
     created()
     {
+            //边栏分类获取，但是实际使用也存在于在边栏组件里，这里是用来替换分类的信息，
+      //以便后期更改分类留接口
+      //...
+      fetch(global.rooturl+"cate/all/")
+      .then(res=>res.json())
+      .then(data=>{
+        let inf=data.result;
+
+        for(let i=0;i<this.News.length;i++)
+        {
+          for(let u=0;u<inf.length;u++)
+          {
+            console.log("found0")
+            if(inf[u].id==this.News[i].categoryId)
+            {
+              console.log("found")
+              this.News[i].class=inf[u].name;
+            }
+          }
+
+        }
+      })
+
+
       //置顶文章获取
       fetch(global.rooturl+"art/select/summary/top/")
       .then(res=>res.json())
@@ -116,14 +140,35 @@ export default
               .then(res=>res.json())
               .then(res=>{this.News = res.result.reverse();})
               .then(()=>{
-              for(let i=0;i<this.News.length;i++){
 
-                  if(this.News[i].coverImageId===0||this.News[i].coverImageId===null){this.News[i].coverImageId="text";}
+                fetch(global.rooturl+"cate/all/")
+                .then(res=>res.json())
+                .then(data=>{
+                  let inf=data.result;
 
-                  if(i%3==0){this.boxLeft.push(this.News[i])}
-                  else if(i%3==1){this.boxMiddle.push(this.News[i])}
-                  else {this.boxRight.push(this.News[i])}
-                }
+                  for(let i=0;i<this.News.length;i++)
+                  {
+                    for(let u=0;u<inf.length;u++)
+                    {
+                      if(inf[u].id==this.News[i].categoryId)
+                      {
+                        this.News[i].class=inf[u].name;
+                      }
+                    }
+
+                  }
+                })
+                .then(()=>{
+                  for(let i=0;i<this.News.length;i++)
+                  {
+                    if(this.News[i].coverImageId===0||this.News[i].coverImageId===null){this.News[i].coverImageId="text";}
+                    if(i%3==0){this.boxLeft.push(this.News[i])}
+                    else if(i%3==1){this.boxMiddle.push(this.News[i])}
+                    else {this.boxRight.push(this.News[i])}
+                  }
+                })
+
+              
               })
       })
 
@@ -145,20 +190,12 @@ export default
           }
       })
 
-      //边栏分类获取，但是实际使用应该在边栏组件里
-      fetch(global.rooturl+"cate/all/")
-      .then(res=>res.json())
-      .then(data=>{
-        console.log(data)
-      })
+
     },
     mounted(){
       fetch(global.rooturl+"crs/select/")
             .then(res=>res.json())
             .then(data=>{
-                let inf=data.result;
-
-
                 
             })
     }

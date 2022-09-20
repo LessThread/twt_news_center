@@ -3,7 +3,7 @@
     <Display
     :title=articleInformation.title
     :headImg=articleInformation.bannerImageId
-    :class_=articleInformation.reviewerName
+    :class_=articleInformation.origin
     :writer=articleInformation.contributorName
     :time=articleInformation.releaseTime
     :content=this.textString
@@ -33,8 +33,10 @@ data() {
         .then(res=>{
             this.articleInformation = res.result;
             this.textString=res.result.text;
-            console.log("this.textString")
-            console.log(this.textString)
+            // console.log("this.textString")
+            // console.log(this.textString)
+
+            
         })
     },
     data(){
