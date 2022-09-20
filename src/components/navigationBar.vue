@@ -46,9 +46,8 @@ export default {
       fetch(global.rooturl+"cate/all")
       .then(res=>res.json())
       .then(data=>{
-        console.log(data);
         for(let i=0;i<data.result.length;i++){
-          console.log(this.iconBox[data.result[i].id%5])
+          //console.log(this.iconBox[data.result[i].id%5])
             this.routers.push({
               name:data.result[i].name,
               id:data.result[i].id,

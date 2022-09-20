@@ -30,7 +30,8 @@
             </div>
 
             <div class="content-container">
-                <div class="text-child" v-html="content_s"></div>
+                <v-md-preview :text="content_s"></v-md-preview>
+                <!-- <div class="text-child" v-html="content_s"></div> -->
             </div>
         </div>
 
@@ -41,6 +42,7 @@
 
 <script>
 import global from '@/global.vue'
+
 export default{
     name:"Display",
     data() {
@@ -58,8 +60,8 @@ export default{
         reader:String|Number
     },
     components:{
-        global,
-    },
+    global,
+},
     watch:{
         // time:{
         //         handler(newVal,oldVal)
@@ -72,11 +74,15 @@ export default{
     },
     computed:{
         content_s(){
+            console.log(this.content)
             if(this.content!=null) return this.content
             else return "加载中"
         },
         time_s(){
-            if(this.time!=null) return this.time_s=this.time.slice(0,10);
+            if(this.time!=null)  {
+                let temp=this.time;
+                return this.time.slice(0,10);
+            }
         }
     }
 }

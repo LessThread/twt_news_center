@@ -178,8 +178,8 @@
 
             let that=this;
 
-            console.log("list")
-            console.log(this.props)
+            //console.log("list")
+            //console.log(this.props)
             
             //this.CalculatesMainColor(1,0)
             // CalculatesMainColor(this.list[1].imgPath,1)
@@ -271,7 +271,7 @@
 
 
                     let re="rgba(" + r + "," + g + "," + b + ","+ a +")";
-                    console.log(re);
+                    //console.log(re);
                     that.r0[id]=re;
                 }
 
@@ -324,8 +324,8 @@
                 handler(newVal,oldVal)
                 {
                     //if(newVal)this.CalculatesMainColor(1,0);
-                    console.log("watch")
-                    console.log(newVal[0].imgPath);
+                    //console.log("watch")
+                    //console.log(newVal[0].imgPath);
                     // for(let n=0;n<4;n++)
                     //     this.CalculatesMainColor(newVal[n].imgPath,n)
                 },
