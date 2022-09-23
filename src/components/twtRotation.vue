@@ -342,7 +342,8 @@
 </script>
 <style scoped>
     /*轮播图盒子样式 自动水平居中*/
-    .carouselBox {
+    .carouselBox 
+    {
         position: relative;
         overflow: hidden;
         margin: 1% auto;
@@ -355,6 +356,7 @@
         border-style: solid;
         border-width: 1pt;
         border-color: #f0f0f0;
+        
     }
  
     /*子绝父相定位——使指示器定位在轮播图下边缘*/
