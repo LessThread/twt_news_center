@@ -65,13 +65,14 @@ import global from '@/global.vue'
 
 export default {
 
+
   name: 'Card',
   data()
   {
     return{
       global_root:global.rooturl,
       local_img:String,
-      type:Number,
+      type:Number
     }
   },
 
@@ -122,7 +123,10 @@ export default {
   justify-content: space-between;
   align-items: center;
   position: relative;
-  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /*box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+  border-style: solid;
+  border-width: 1pt;
+  border-color: #f0f0f0;
   
 }
 
@@ -135,7 +139,10 @@ export default {
   border-radius: 15px;
   min-height: 10vh;
   background-color: rgb(244, 246, 247);
-  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /*box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+  border-style: solid;
+  border-width: 1pt;
+  border-color: #f0f0f0;
 }
 
 .InfoCard .img_box

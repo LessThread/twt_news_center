@@ -1,8 +1,8 @@
 <template>
   <div class="navigation-bar">
     <div class="heading-twt-text">
-      <img src="../assets/Vector.svg" class="title-icon-2"/>
-      <img src="../assets/TWT_News.svg" class="title-icon-3"/>
+      <img src="../assets/Vector.svg" class="title-icon-2" @click="iconToHome" />
+      <img src="../assets/TWT_News.svg" class="title-icon-3" @click="iconToHome" />
     </div>
     <div v-for="(item ,index) in routers" :key="item.router" 
     :class="item.router=='/'+this.$route.path.split('/')[1]?'main-routers-yes':'main-routers-no'" 
@@ -23,8 +23,11 @@ export default {
     methods:{
       to(router,id){
         this.$router.push("/RecentNews?id="+id);
-        
       },
+      iconToHome(){
+        this.$router.push("/RecentNews?id=0");
+      }
+
     },
     data(){
       return{

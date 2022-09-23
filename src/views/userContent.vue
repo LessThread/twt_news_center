@@ -153,9 +153,10 @@ watch: {
 
 .main-user-content{
   position:absolute;
-  left:20%;
+  left:25%;
+  right: 24%;
   margin-top: 6%;
-  width:80%;
+  width:70%;
   height: auto;
 }
 
@@ -163,7 +164,7 @@ watch: {
   display: none;
 }
 
-@media only screen and (max-width: 1800px) {
+@media only screen and (max-width: 1400px) {
   .dis{
     display: none;
     

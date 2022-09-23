@@ -99,8 +99,8 @@
     height: 70vh;
     /* background-color: yellow; */
     animation: FadeInOut ease 3s; 
-  animation-iteration-count: 1; /*设置动画播放次数*/
-  animation-fill-mode: forwards;
+    animation-iteration-count: 1; /*设置动画播放次数*/
+    animation-fill-mode: forwards;
 }
 .textContent{
     position: absolute;
@@ -351,7 +351,10 @@
         border-radius: 25px;
         background-color: rgb(250, 250, 250);
         height: 100%;
-        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        /*box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+        border-style: solid;
+        border-width: 1pt;
+        border-color: #f0f0f0;
     }
  
     /*子绝父相定位——使指示器定位在轮播图下边缘*/

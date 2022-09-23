@@ -4,14 +4,14 @@
         <img src="../assets/search.svg" class="search-icon"/>
         <input  @keyup.enter='search' type="text" class="search-input" :placeholder="some_text" @change="search" readonly="readonly" style=" opacity: 0.6;cursor: not-allowed;" />
     </div>
-    <div class="twt-getting-box">
-      <p class="twt-getting-text">天外天 · 纳新进行中</p>
-      <p class="twt-getting-hot">Hot</p>
-    </div>
+    <!-- <div class="twt-getting-box"> -->
+      <!-- <p class="twt-getting-text">天外天 · 纳新进行中</p> -->
+      <!-- <p class="twt-getting-hot">Hot</p> -->
+    <!-- </div> -->
     <p class="twt-other-routers" v-show="1"><a href="https://www.twt.edu.cn/home/" class="link" target="_blank" style="cursor: help;">工作室官网</a></p>
-    <p class="twt-other-routers" style=" opacity: 0.6;cursor: not-allowed;">关于我们</p>
+    <!-- <p class="twt-other-routers" style=" opacity: 0.6;cursor: not-allowed;">关于我们</p>
     <p class="twt-other-routers" v-show="1" style=" opacity: 0.6;cursor: not-allowed;">投稿</p>
-    <button class="login-button" v-show="1" style=" opacity: 0.6;cursor: not-allowed;">登录</button>
+    <button class="login-button" v-show="1" style=" opacity: 0.6;cursor: not-allowed;">登录</button> -->
   </div>
 </template>
 
@@ -44,13 +44,13 @@ export default {
 <style>
 .title-bar{
   position:absolute;
-  left:20%;
+  left:25%;
   top:0;
   height:10%;
-  width:80%;
+  width:65%;
   display:flex;
   align-items:center;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 .search-box{
   background:#F0F0F0;
@@ -116,5 +116,6 @@ export default {
   .link{
     text-decoration: none;
     color: black;
+    
   }
 </style>
