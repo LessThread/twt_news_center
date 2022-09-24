@@ -44,26 +44,26 @@ export default {
 <style>
 .title-bar{
   position:absolute;
-  left:25%;
+  left:293px;
   top:0;
-  height:10%;
-  width:65%;
+  height:94px;
+  width:1625px;
   display:flex;
   align-items:center;
   justify-content: space-between;
 }
 .search-box{
   background:#F0F0F0;
-  width:30%;
-  height:40%;
+  width:374px;
+  height:30px;
   border-radius:3vh;
   display:flex;
   flex-direction:row;
   align-items:center;
-  margin-left: 5%;
+  margin-left: 153px;
 }
 .search-icon{
-  width:6%;
+  width:24px;
   margin-left:2%;
   margin-right:2%;
 }
@@ -116,6 +116,7 @@ export default {
   .link{
     text-decoration: none;
     color: black;
-    
+    margin-right: 153px;
+    background-color: aquamarine;
   }
 </style>

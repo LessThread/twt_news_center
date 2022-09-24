@@ -88,15 +88,14 @@
     /* min-width: 1000px; */
     height: 100%;
     /* filter: blur(1px); */
-    -webkit-mask-image: linear-gradient(90deg,black 80%, rgb(11, 11, 11), transparent)
+    /*-webkit-mask-image: linear-gradient(90deg,black 80%, rgb(11, 11, 11), transparent)*/
     
 }
 
 .rotation{
-    width: 100%;
-    min-width: 600px;
-    max-height: 520px;
-    height: 70vh;
+    width: 1321px;
+    height: 420px;
+    margin-left: 153px;
     /* background-color: yellow; */
     animation: FadeInOut ease 3s; 
     animation-iteration-count: 1; /*设置动画播放次数*/
@@ -104,7 +103,7 @@
 }
 .textContent{
     position: absolute;
-    left: 60%;
+    left: 65%;
     width: 40%;
     height: 100%;
     /* background-color:#fd9b51; */
@@ -346,8 +345,7 @@
     {
         position: relative;
         overflow: hidden;
-        margin: 1% auto;
-        width: 90%;
+        width: 100%;
         min-width: 900px;
         border-radius: 25px;
         background-color: rgb(250, 250, 250);

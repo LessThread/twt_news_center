@@ -1,33 +1,23 @@
 <template>
-  <div class="user-content">
-
+  <div>
     <div class="dis">
       <navigationBar/>
       <titleBar/>
-      <!-- <transition :name="transitionName">
-        <router-view/>
-      </transition> -->
-
       <router-view v-slot="{ Component }">
         <transition :name="transitionName">
             <component :is="Component" />
         </transition>
       </router-view>
     </div>
-
     <!-- <div class="err" style="position: absolute;text-align: center;background-color:#F7B888;width: 10vw;z-index: 6;" v-show="zoom">
       <p>您的浏览器缩放比例不是100%,可能会影响页面</p>
     </div> -->
     
     <!-- 此页面预留异形适配接口 -->
-    <div class="udis">
-      <NavigationBarLite/>
-      <router-view/>
-    </div>
-    
-    
-    <!-- <LoginPop v-show="this.$store.state.if_mask_layer"/>
-    -->
+      <div class="udis">
+        <NavigationBarLite/>
+        <router-view/>
+      </div>
     </div>
 </template>
 
@@ -146,18 +136,16 @@ watch: {
     }
 
 
-.user-content{
-  width:100vw;
-  height: auto;
-}
+
 
 .main-user-content{
   position:absolute;
-  left:20%;
-  right: 20%;
-  margin-top: 6%;
-  width:80%;
+  left:293px;
+  right:153px;
+  margin-top: 94px;
+  width:1625px;
   height: auto;
+  background-color: aqua;
 }
 
 .udis{

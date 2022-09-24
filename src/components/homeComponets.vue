@@ -1,11 +1,8 @@
 <template>
   <div>
-    <div class="rot">
       <userRot
         :list="RotationList"
         />
-    </div>
-    <br/>
       
       <div class="CardBox">
 
@@ -49,9 +46,6 @@
         </div>
         
       </div>
-      <!-- <canvas id="canvas" width="1200" height="500"></canvas> -->
-      <!-- <img id="cimg" src="https://news.twt.edu.cn/imgbed/download/30" /> -->
-      <!-- <div id="y1">color</div> -->
       <copyright/>
       
   </div>
@@ -82,6 +76,7 @@ export default
         boxRight:[],
         boxMiddle:[],
         boxLeft:[],
+        boxPlus:[],
       }
     },
     components:
@@ -205,26 +200,21 @@ export default
 
 <style scoped>
 .CardBox{
-  margin:0.3% auto;
-  width: 90%;
+  margin:35px auto;
+  width: 1321px;
   display: flex;
   /* min-width: 70vw; */
   justify-content: space-between;
   position: relative;
-  /* background-color: yellow; */
 }
 
-.rot{
-  margin:0 auto;
-}
+
 
 .CardBox .CardBoxSon{
   width: 32%;
-  /* background-color: blueviolet; */
 }
 
 .cBox{
-  /* background-color: green; */
   width: 100%;
 }
 
