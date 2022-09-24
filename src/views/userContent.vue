@@ -153,10 +153,10 @@ watch: {
 
 .main-user-content{
   position:absolute;
-  left:25%;
-  right: 24%;
+  left:20%;
+  right: 20%;
   margin-top: 6%;
-  width:70%;
+  width:80%;
   height: auto;
 }
 

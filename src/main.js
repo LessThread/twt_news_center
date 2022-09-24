@@ -25,6 +25,8 @@ import '@kangc/v-md-editor/lib/style/preview-html.css';
 
 import Prism from 'prismjs';
 
+import './utils/rem'
+
 
 
 

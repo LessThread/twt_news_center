@@ -67,12 +67,12 @@ export default {
   position:fixed;
   top:0;
   left:0;
-  width:20rem;
+  width:293px;
   height:100%;
   background: #F5F5F5;
 }
 .heading-twt-text{
-  height:10%;
+  height:94px;
   display:flex;
   flex-direction:row;
   align-items:center;
@@ -81,11 +81,11 @@ export default {
 
 
 [class^="title-icon-"]{
-  margin-left:6.5%;
+  margin-left:9px;
 }
 .title-icon-1{height:auto;cursor:pointer;margin-left:8.5%;}
-.title-icon-2{height:40%;width: 20%;}
-.title-icon-3{height:30%;width: 60%;}
+.title-icon-2{height:35px;width:30px ;margin-left: 30px;}
+.title-icon-3{height:44px;width: 168px;margin-left: 15px;}
 .main-routers-yes{
   display:flex;
   height:7%;
@@ -105,12 +105,13 @@ export default {
   transition:all .15s
 }
 .router-icon{
-  margin-left:8%;
+  margin-left: 30px;
+  width: 24px;
 }
 .main-routers-text{
-  margin-left:8%;
-  font-size:1.3rem;
-  
+  margin-left:16px;
+  font-weight: 400; 
+  font-size: 20px;
 }
 
 .main-routers-text:hover{
