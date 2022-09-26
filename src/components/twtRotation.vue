@@ -92,6 +92,15 @@
     
 }
 
+.R-imgs{
+    width: 80%; 
+    /* min-width: 1000px; */
+    height: 100%;
+    /* filter: blur(1px); */
+    /*-webkit-mask-image: linear-gradient(90deg,black 80%, rgb(11, 11, 11), transparent)*/
+    
+}
+
 .rotation{
     width: 1321px;
     height: 420px;

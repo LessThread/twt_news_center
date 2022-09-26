@@ -10,7 +10,6 @@
         <a>{{words}}</a>
       </div>
         
-      <br/>
 
       <div class="script">
         <div class="script_class" >
@@ -112,7 +111,7 @@ export default {
 .InfoCard{
   /* min-width: 12vw; */
   position: absolute;
-  width: 100%;
+  width: 304px;
   height: auto;
   border-style: none;
   border-radius: 15px;
@@ -131,9 +130,7 @@ export default {
 }
 
 .TxtCard{
-  
-  width: 100%;
-  /* min-width: 20vw; */
+  width: 304px;
   height: auto;
   border-style: none;
   border-radius: 15px;
@@ -149,8 +146,8 @@ export default {
 {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-  width:100%;
-  height: 200px;
+  width:304px;
+  height: 171px;
   overflow: hidden;
 }
 .InfoCard .img
@@ -170,7 +167,7 @@ export default {
 
 .Card .text
 {
-  width: 80%;
+  width: 264px;
   margin: 0 auto;
   font-size: 25px;
   text-align: left;
@@ -180,17 +177,15 @@ export default {
 
 .Card .script
 {
-  width: 80%;
+  width: 264px;
   display: flex;
   margin: 0 auto;
   justify-content: space-between;
 }
 .Card .script>div
 {
-  width: 22%;
   font-size: 10px;
   color: rgb(118, 119, 119);
-  /* background-color: aqua; */
 }
 
 .Card .TxtCard .top{
@@ -241,7 +236,6 @@ export default {
 }
 .script_time{
   white-space: nowrap;
-  padding-left:5%;
 }
 
 .Card .TxtCard .script{

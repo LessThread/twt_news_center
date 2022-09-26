@@ -1,14 +1,14 @@
 <template>
   <div class="navigation-bar">
     <div class="heading-twt-text">
-      <img src="../assets/Vector.svg" class="title-icon-2" @click="iconToHome" />
-      <img src="../assets/TWT_News.svg" class="title-icon-3" @click="iconToHome" />
+      <img src="../assets/Vector.svg" class="title-icon-2" @click="iconToHome" style="cursor:pointer" />
+      <img src="../assets/TWT_News.svg" class="title-icon-3" @click="iconToHome" style="cursor:pointer" />
     </div>
     <div v-for="(item ,index) in routers" :key="item.router" 
-    :class="item.router=='/'+this.$route.path.split('/')[1]?'main-routers-yes':'main-routers-no'" 
+    :class="item.isCurrent?'main-routers-yes':'main-routers-no'" 
     @click="to(item.router,item.id)">
       <img :src="item.src" class="router-icon"/>
-      <p class="main-routers-text" v-show="1">{{item.name}}</p>
+      <p class="main-routers-text" v-show="1" :id="'router'+index" :class="{'isfontWeight':item.isCurrent}" >{{item.name}}</p>
     </div>
     
   </div>
@@ -24,7 +24,7 @@ export default {
       to(router,id){
         this.$router.push("/RecentNews?id="+id);
       },
-      iconToHome(){
+      iconToHome(){0
         this.$router.push("/RecentNews?id=0");
       }
 
@@ -41,7 +41,8 @@ export default {
         ],
         routers:[
           {name:"全部",router:"/",src:require('../assets/calendar.svg'),id:0},
-        ]
+        ],
+
       }
     },
     mounted()
@@ -54,22 +55,43 @@ export default {
             this.routers.push({
               name:data.result[i].name,
               id:data.result[i].id,
-              src:this.iconBox[data.result[i].id%5]
+              src:this.iconBox[data.result[i].id%5],
+              isCurrent: 0,
           })
         }
       })
     },
+    watch:{
+      '$route':function(newVal,oldVal){
+        let newUrl = newVal.href;
+        newUrl=newUrl.slice(newUrl.indexOf("?")+4);
+        //newUrl="router"+newUrl;
+
+        let oldUrl = oldVal.href;
+        oldUrl= oldUrl.slice( oldUrl.indexOf("?")+4);
+        //oldUrl="router"+ oldUrl;
+
+        this.routers[newUrl].isCurrent=1;
+        this.routers[oldUrl].isCurrent=0;
+      }
+
+    }
 }
 </script>
 
 <style scoped>
+/*.main-routers-yes{
+  background-color: #F0F0F0;
+  color: #2A2A2A;
+}
+}*/
 .navigation-bar{
   position:fixed;
   top:0;
   left:0;
   width:293px;
   height:100%;
-  background: #F5F5F5;
+  background: #FAFAFA;
 }
 .heading-twt-text{
   height:94px;
@@ -94,6 +116,7 @@ export default {
   cursor:pointer;
   background:#F0F0F0;
   transition: all .15s;
+  color: 2A2A2A;
 }
 .main-routers-no{
   display:flex;
@@ -102,7 +125,9 @@ export default {
   align-items:center;
   opacity: .7;
   cursor:pointer;
-  transition:all .15s
+  transition:all .15s;
+  color:#767676;
+  background-color:#FAFAFA ;
 }
 .router-icon{
   margin-left: 30px;
@@ -118,4 +143,5 @@ export default {
   text-decoration: dashed;
   font-weight:bold;
 }
+
 </style>

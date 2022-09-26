@@ -117,6 +117,5 @@ export default {
     text-decoration: none;
     color: black;
     margin-right: 153px;
-    background-color: aquamarine;
   }
 </style>

@@ -44,6 +44,19 @@
             />
           </div>
         </div>
+
+        <div id="box_plus" class="CardBoxSon">
+          <div v-for="item in boxPlus" class="cBoxR cBox" :key="item.id" v-show="item.categoryId==filter||filter=='0'" >
+            <Card
+            :img="item.coverImageId"
+            :words="item.title"
+            :NewsClass="item.class"
+            :NewsTime="item.releaseTime.slice(0,-9)"
+            :url="item.id"
+            :Top="item.status"
+            />
+          </div>
+        </div>
         
       </div>
       <copyright/>
@@ -56,6 +69,7 @@ import userRot from '@/components/twtRotation.vue'
 import Card from '@/components/Card.vue'
 import global from '@/global.vue'
 import copyright from '@/components/copyright.vue'
+import { CLOSING } from 'ws'
 export default 
 {
     name:"HomeComponets",
@@ -124,9 +138,10 @@ export default
 
               if(this.TNews[i].coverImageId===0||this.TNews[i].coverImageId===null){this.TNews[i].coverImageId="text";}
 
-              if(i%3==0){this.boxLeft.push(this.TNews[i])}
-              else if(i%3==1){this.boxMiddle.push(this.TNews[i])}
-              else {this.boxRight.push(this.TNews[i])}
+              if(i%4==0){this.boxLeft.push(this.TNews[i])}
+              else if(i%4==1){this.boxMiddle.push(this.TNews[i])}
+              else if(i%4==2) {this.boxRight.push(this.TNews[i])}
+              else {this.boxPlus.push(this.TNews[i])}
             }
       })
       .then(()=>{
@@ -157,12 +172,12 @@ export default
                   for(let i=0;i<this.News.length;i++)
                   {
                     if(this.News[i].coverImageId===0||this.News[i].coverImageId===null){this.News[i].coverImageId="text";}
-                    if(i%3==0){this.boxLeft.push(this.News[i])}
-                    else if(i%3==1){this.boxMiddle.push(this.News[i])}
-                    else {this.boxRight.push(this.News[i])}
+                    if(i%4==0){this.boxLeft.push(this.News[i])}
+                    else if(i%4==1){this.boxMiddle.push(this.News[i])}
+                    else if(i%4==2) {this.boxRight.push(this.News[i])}
+                    else{this.boxPlus.push(this.News[i])}
                   }
                 })
-
               
               })
       })
@@ -193,6 +208,44 @@ export default
             .then(data=>{
                 
             })
+    },
+
+    beforeUpdate(){
+      this.boxRight.splice(0);
+      this.boxMiddle.splice(0);
+      this.boxLeft.splice(0);
+      this.boxPlus.splice(0);
+
+      let boxPtr=0;
+      for(let i=0;i<this.TNews.length;i++)
+      {
+        
+        if(this.TNews[i].coverImageId===0||this.TNews[i].coverImageId===null){this.TNews[i].coverImageId="text";}
+        if(this.TNews[i].categoryId==this.filter||this.filter=='0')
+        {
+          if(boxPtr%4===0){this.boxLeft.push(this.TNews[i]);boxPtr++;}
+          else if(boxPtr%4===1) {this.boxMiddle.push(this.TNews[i]);boxPtr++;}
+          else if(boxPtr%4===2) {this.boxRight.push(this.TNews[i]);boxPtr++;}
+          else{this.boxPlus.push(this.TNews[i]);boxPtr++;}
+        }
+        
+      }
+
+      boxPtr=0;
+      for(let i=0;i<this.News.length;i++)
+        {
+          
+          if(this.News[i].coverImageId===0||this.News[i].coverImageId===null){this.News[i].coverImageId="text";}
+          if(this.News[i].categoryId==this.filter||this.filter=='0')
+          {
+            if(boxPtr%4==0){this.boxLeft.push(this.News[i]);boxPtr++;}
+            else if(boxPtr%4==1){this.boxMiddle.push(this.News[i]);boxPtr++;}
+            else if(boxPtr%4==2) {this.boxRight.push(this.News[i]);boxPtr++;}
+            else{this.boxPlus.push(this.News[i]);boxPtr++;}
+          }
+          
+        }
+
     }
 
 }
@@ -211,7 +264,6 @@ export default
 
 
 .CardBox .CardBoxSon{
-  width: 32%;
 }
 
 .cBox{
