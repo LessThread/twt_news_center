@@ -28,8 +28,8 @@
                 </div>
             </div>
 
-            <div class="content-container" style="max-width: 90%;">
-                <v-md-preview :text="content_s" style="max-width: 100%;"></v-md-preview>
+            <div class="content-container" style="max-width: 95%;">
+                <v-md-preview :text="content_s" style="max-width: 110%;"></v-md-preview>
                 <!-- <div class="text-child" v-html="content_s"></div> -->
             </div>
         </div>
@@ -92,11 +92,12 @@ export default{
 
 <style scoped>
 .display{
-    width: 90%;
-    margin-left: 5%;
+    width: 1321px;
+    margin:auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+
 }
 
 .header-img-container{
@@ -110,8 +111,8 @@ export default{
     max-height: 400px;
     /*box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
     border-style: solid;
-        border-width: 1pt;
-        border-color: #f0f0f0;
+    border-width: 1pt;
+    border-color: #f0f0f0;
 }
 
 .header-img-container>img{
@@ -125,26 +126,29 @@ export default{
     margin-top: 1.5%;
     font-size: 40px;
     color: rgb(84, 85, 86);
-    width: 94%;
+    width: 90%;
+
 }
 
 .text-container{
-    width: 94%;
+    width: 100%;
+    height: auto;
 }
 
 .header-container{
     display: flex;
     justify-content: space-between;
-    width: 100%;
-    margin-top: 1.5%;
+    width: 89.5%;
     color:rgb(100, 103, 103);
+    margin:1% auto;
+
 }
 
 .content-container{
-    margin-top: 1.5%;
     display:flex;
     flex-direction: column;
     align-items:center;
+    margin: 1% auto;
 }
 
 .content-container>img{
