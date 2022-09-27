@@ -231,7 +231,7 @@ export default
         
       }
 
-      boxPtr=0;
+      //boxPtr=0;
       for(let i=0;i<this.News.length;i++)
         {
           
@@ -264,6 +264,7 @@ export default
 
 
 .CardBox .CardBoxSon{
+  min-width: 304px;
 }
 
 .cBox{

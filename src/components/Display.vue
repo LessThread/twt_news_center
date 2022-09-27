@@ -83,7 +83,10 @@ export default{
                 return this.time.slice(0,10);
             }
         }
-    }
+    },
+    created() {
+        scrollTo(0,0);
+    },
 }
 </script>
 
@@ -99,8 +102,8 @@ export default{
 .header-img-container{
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    width: 100%;
-    height: 10%;
+    width: 1321px;
+    height: 420px;
     overflow: hidden;
     border:1px rgba(0, 0, 0, 0.1) solid;
     border-radius:20px;
@@ -113,8 +116,8 @@ export default{
 
 .header-img-container>img{
     width: 100%;
-    /* padding-left:20%;
-    padding-right:20%; */
+    width: 1321px;
+    height: 420px;
     background: #FFFFFF;
 }
 

@@ -147,7 +147,7 @@ export default {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   width:304px;
-  height: 171px;
+  height:171px;
   overflow: hidden;
 }
 .InfoCard .img

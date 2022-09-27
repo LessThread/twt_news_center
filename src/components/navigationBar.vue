@@ -62,17 +62,30 @@ export default {
       })
     },
     watch:{
-      '$route':function(newVal,oldVal){
+      '$route':function(newVal,oldVal)
+      {
         let newUrl = newVal.href;
-        newUrl=newUrl.slice(newUrl.indexOf("?")+4);
-        //newUrl="router"+newUrl;
-
         let oldUrl = oldVal.href;
-        oldUrl= oldUrl.slice( oldUrl.indexOf("?")+4);
-        //oldUrl="router"+ oldUrl;
-
-        this.routers[newUrl].isCurrent=1;
-        this.routers[oldUrl].isCurrent=0;
+        
+        if((newUrl.indexOf("RecentNews")!=-1)&&(oldUrl.indexOf("RecentNews")!=-1))
+        {
+          newUrl=newUrl.slice(newUrl.indexOf("?")+4);
+          oldUrl= oldUrl.slice( oldUrl.indexOf("?")+4);
+          this.routers[newUrl].isCurrent=1;
+          this.routers[oldUrl].isCurrent=0;
+          console.log("case1");
+        }
+        
+        else if((newUrl.indexOf("RecentNews")!=-1)&&(oldUrl.indexOf("RecentNews")==-1))
+        {
+          return;
+        }
+        
+        else if((newUrl.indexOf("RecentNews")==-1)&&(oldUrl.indexOf("RecentNews")!=-1))
+        {
+          oldUrl= oldUrl.slice( oldUrl.indexOf("?")+4);
+          this.routers[oldUrl].isCurrent=0;
+        }
       }
 
     }
