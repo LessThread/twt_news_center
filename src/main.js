@@ -3,6 +3,9 @@ import App from './App.vue'
 import router from './router'
 import "./css/font.css"
 
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
+
 
 
 import Vue from 'vue';
@@ -48,4 +51,5 @@ const app=createApp(App)
 app.use(VueMarkdownEditor)
 app.use(VMdPreview)
 app.use(router)
+app.use(ElementPlus)
 app.mount('#app')
