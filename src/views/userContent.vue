@@ -61,7 +61,7 @@ watch: {
     //alert(this.$route.path);
     if(this.$route.path==="/"){this.$router.push("/RecentNews?id=0")}
 
-    if(this.detectZoom()!=100)alert("您的浏览器缩放比例不是100%,可能会影响页面")
+    //if(this.detectZoom()!=100)alert("您的浏览器缩放比例不是100%,可能会影响页面")
 
     // this.$nextTick(()=>{                
     //             var p = navigator.platform;
@@ -151,7 +151,9 @@ watch: {
   display: none;
 }
 
-@media only screen and (max-width: 1400px) {
+
+/*@media only screen and (max-width: 1400px) 
+{
   .dis{
     display: none;
     
@@ -162,15 +164,15 @@ watch: {
   }
 
   .main-user-content{
-  /* background-color: yellow; */
   position:static;
   margin: 0 auto;
   margin-top: 6%;
   width:90%;
   height: auto;
   min-width: 1200px;
-}
-}
+  }
+}*/
+
 
 
 

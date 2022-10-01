@@ -1,5 +1,4 @@
 <template>
-  <div>
       <userRot
         :list="RotationList"
         />
@@ -60,8 +59,6 @@
         
       </div>
       <copyright/>
-      
-  </div>
 </template>
 
 <script>

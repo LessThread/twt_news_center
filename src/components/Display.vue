@@ -12,7 +12,8 @@
             <div class="header-container">
                 <div class="class-container">
                 {{'来源：'+ class_}}&ensp;&ensp;&ensp;&ensp;
-                {{'供稿：'+ writer}}
+                {{'供稿：'+ _writer}}&ensp;&ensp;&ensp;&ensp;
+                {{'摄影：'+ _photographer}}
                 </div>
 
                 <div class="writer-container">
@@ -41,12 +42,15 @@
 
 <script>
 import global from '@/global.vue'
+import { indexOf } from 'lodash'
 
 export default{
     name:"Display",
     data() {
         return {
             global_rooturl:global.rooturl,
+            // _photographer:String,
+            // _writer:String,
         }
     },
     props:{
@@ -82,6 +86,22 @@ export default{
                 let temp=this.time;
                 return this.time.slice(0,10);
             }
+        },
+        _writer(){
+            if(this.writer!=null)
+            {
+                if(this.writer.indexOf("$")!=-1)return this.writer.slice(0,this.writer.indexOf("$"));
+                else return "暂无"
+            }
+        },
+        _photographer()
+        {
+            if(this.writer!=null)
+            {
+                if(this.writer.indexOf("$")!=-1)return this.writer.slice(this.writer.indexOf("$")+1);
+                else return "暂无"
+            }
+            
         }
     },
     created() {

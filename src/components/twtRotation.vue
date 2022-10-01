@@ -58,10 +58,10 @@
                 <div class="header" :id="'r'+index+'h'" style="font-size: 40px,font-weight:bold;color:white">
                     {{item.header}}
                 </div>
-                <div class="Summary" style="font-size: 16px;color:white;">
+                <div class="Summary" style="color:white;">
                     {{item.summary}}
                 </div>
-                <div class="time" style="font-family: 'Product-Sans';font-size: 20px;color:white">
+                <div class="time" style="font-family: 'Product-Sans';color:white">
                     {{item.time.slice(0,11)}}
                 </div>
             </div>
@@ -136,6 +136,7 @@
     margin-top: 5%;
     margin-left: 5%;
     width: 50%;
+    font-size: 16px;
 }
 
 .textContent .time{

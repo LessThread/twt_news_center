@@ -15,7 +15,7 @@
         <div class="script_class" >
           {{!Top?NewsClass:""}}
         </div>
-        <div class="script_time" style="font-family: 'Product-Sans';font-size: 14px;">
+        <div class="script_time">
           {{NewsTime}}
         </div>
       </div>
@@ -42,7 +42,7 @@
         <div class="script_class">
           {{!Top?NewsClass:""}}
         </div>
-        <div class="script_time" style="font-family: 'Product-Sans';font-size: 14px;">
+        <div class="script_time">
           {{NewsTime}}
         </div>
       </div>
@@ -126,6 +126,8 @@ export default {
   border-style: solid;
   border-width: 1pt;
   border-color: #f0f0f0;
+
+  min-width:10rem ;
   
 }
 
@@ -150,6 +152,7 @@ export default {
   height:171px;
   overflow: hidden;
 }
+
 .InfoCard .img
 {
   border-top-left-radius: 15px;
@@ -195,7 +198,7 @@ export default {
   border-width: 2px;
   color: rgb(9, 120, 199);
 
-  width: 8%;
+  width:42px;
   position:relative;
   left:10%;
   margin-top: -5%;
@@ -211,12 +214,16 @@ export default {
   border-width: 2px;
   color: rgb(9, 120, 199);
 
-  width: 8%;
+  width:50px;
+  height:16px;
   position:absolute;
   bottom:6%;
-  left:10%;
-  font-size: 8px;
+  left:8%;
+  padding:3px 1px 1px 1px;
+  font-size: 1rem;
   text-align: center;
+  border-width: 3px;
+  border-radius: 10px;
 }
 
 .Card a
@@ -233,9 +240,12 @@ export default {
 .script_class{
   white-space: nowrap;
   text-align: left;
+  font-size: 14px;
 }
 .script_time{
   white-space: nowrap;
+  font-size: 14px;
+  font-family: 'Product-Sans';
 }
 
 .Card .TxtCard .script{
@@ -245,5 +255,27 @@ export default {
 @keyframes FadeInOut{
   0%{opacity: 0;}
   100%{opacity: 1;}
+}
+
+@media only screen and (max-width: 950px) {
+  .Card .InfoCard .top{
+    display: none;
+  }
+  .script_class{
+    display: none;
+  }
+  .script_time{
+   float:center;
+   margin: 0 auto;
+  }
+  .InfoCard{
+    
+  }
+}
+
+@media only screen and (max-width: 450px){
+  .script_time{
+    display: none;
+   }
 }
 </style>

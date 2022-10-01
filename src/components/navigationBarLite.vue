@@ -82,34 +82,16 @@
     .title-icon-1{height:auto;cursor:pointer;margin:10px auto;}
     .title-icon-2{height:40%;margin:10px auto;}
     .title-icon-3{height:30%;}
-    .main-routers-yes{
-        display:flex;
-        height:7%;
-        width:100%;
-        align-items:center;
-        cursor:pointer;
-        background:#F0F0F0;
-        transition: all .15s;
-    }
-    .main-routers-no{
-        display:flex;
-        height:7%;
-        width:100%;
-        align-items:center;
-        opacity: .7;
-        cursor:pointer;
-        transition:all .15s
-    }
+
     .router-icon{
         margin:1px auto;
     }
     .main-routers-text{
-        width: 40%;
-        margin:10px auto;
-        font-size:0.5vw;
+        width: 90px;
+        max-height: 90px;
+        margin:40px auto;
+        font-size:16px;
         text-align: center;
-        min-width: 25px;
-        max-width: 30px;
         /* background-color: yellow; */
     }
     </style>
