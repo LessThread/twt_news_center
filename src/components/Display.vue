@@ -91,7 +91,7 @@ export default{
             if(this.writer!=null)
             {
                 if(this.writer.indexOf("$")!=-1)return this.writer.slice(0,this.writer.indexOf("$"));
-                else return "暂无"
+                else return this.writer
             }
         },
         _photographer()
