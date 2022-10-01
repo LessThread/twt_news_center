@@ -14,17 +14,12 @@
       <div class="script">
         <div class="script_class" >
           {{!Top?NewsClass:""}}
+          <img :src="require('../assets/TopIcon.png')" class="topPng" v-if="Top"/>
         </div>
         <div class="script_time">
           {{NewsTime}}
         </div>
       </div>
-
-      <div class="top" v-if="Top">
-            <div>置顶</div>
-      </div>
-
-      <br/>
   </div>
 
   <div class="TxtCard" v-if="!type">
@@ -35,8 +30,6 @@
         <a>{{words}}</a>  
         </div>
         
-        <!-- <div class="blank">
-        </div> -->
 
         <div class="script">
         <div class="script_class">
@@ -44,15 +37,12 @@
         </div>
         <div class="script_time">
           {{NewsTime}}
+          <div class="top" v-if="Top">
+            <div>置顶</div>
+          </div>
         </div>
       </div>
 
-      <div class="top" v-if="Top">
-            <div>置顶</div>
-      </div>
-
-      <!-- <div class="blank">
-      </div> -->
       <br/>
   </div>
   
@@ -174,8 +164,9 @@ export default {
   margin: 0 auto;
   font-size: 25px;
   text-align: left;
-  margin-top: 8%;
-  margin-bottom: 10%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  
 }
 
 .Card .script
@@ -240,12 +231,14 @@ export default {
 .script_class{
   white-space: nowrap;
   text-align: left;
-  font-size: 14px;
+  font-size: 18px;
+  margin-top:5px;
 }
 .script_time{
   white-space: nowrap;
-  font-size: 14px;
+  font-size: 18px;
   font-family: 'Product-Sans';
+  margin-top:5px;
 }
 
 .Card .TxtCard .script{
@@ -265,8 +258,8 @@ export default {
     display: none;
   }
   .script_time{
-   float:center;
-   margin: 0 auto;
+    float:center;
+    margin: 0 auto;
   }
   .InfoCard{
     
@@ -276,6 +269,16 @@ export default {
 @media only screen and (max-width: 450px){
   .script_time{
     display: none;
-   }
+    }
 }
+</style>
+
+<style scoped>
+  .topPng{
+    width: 40px;
+  }
+  .script{
+    height:30px;
+    
+  }
 </style>
