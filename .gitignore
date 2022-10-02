@@ -23,3 +23,4 @@ pnpm-debug.log*
 *.sw?
 /dist
 dist*.7z
+前台*.7z
