@@ -13,14 +13,13 @@
                 <div class="class-container">
                 {{'来源：'+ class_}}&ensp;&ensp;&ensp;&ensp;
                 {{'供稿：'+ _writer}}&ensp;&ensp;&ensp;&ensp;
-                {{'摄影：'+ _photographer}}
+                {{'供图：'+ _photographer}}
                 </div>
 
                 <div class="writer-container">
                 </div>
 
                 <div class="reader">
-                   
                 </div>
 
                 <div class="time-container" style="font-family: 'Product-Sans'">
