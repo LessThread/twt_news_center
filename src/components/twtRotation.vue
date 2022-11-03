@@ -89,7 +89,7 @@
     height: 100%;
     /* filter: blur(1px); */
     /*-webkit-mask-image: linear-gradient(90deg,black 80%, rgb(11, 11, 11), transparent)*/
-    
+    cursor:pointer;
 }
 
 .R-imgs{
@@ -125,11 +125,12 @@
     margin-top: 10%;
     margin-left: 5%;
     width: 50%;
+    cursor:pointer;
     /* background-color:#fd9b51 ; */
 }
 
 .textContent .header:hover{
-    text-decoration: underline;
+    
 }
 
 .textContent .Summary{
@@ -137,6 +138,7 @@
     margin-left: 5%;
     width: 50%;
     font-size: 16px;
+    cursor:pointer;
 }
 
 .textContent .time{
