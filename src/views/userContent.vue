@@ -9,6 +9,13 @@
         </transition>
       </router-view>
     </div>
+
+    <!-- 遮罩层 -->
+    <div class="mask">
+      <div class="login-ui">
+        <p style="">登陆天外天</p>
+      </div>
+    </div>
     <!-- <div class="err" style="position: absolute;text-align: center;background-color:#F7B888;width: 10vw;z-index: 6;" v-show="zoom">
       <p>您的浏览器缩放比例不是100%,可能会影响页面</p>
     </div> -->
@@ -151,27 +158,28 @@ watch: {
   display: none;
 }
 
+.mask{
+  position: absolute;
+  z-index: 9;
+  background-color: rgba(27, 27, 27, 0.645);
+  width: 100vw;
+  height: 100vh;
 
-/*@media only screen and (max-width: 1400px) 
-{
-  .dis{
-    display: none;
-    
-  }
+}
 
-  .udis{
-    display: block;
-  }
+.login-ui{
+  position: fixed;
+  width: 512px;
+  
 
-  .main-user-content{
-  position:static;
-  margin: 0 auto;
-  margin-top: 6%;
-  width:90%;
-  height: auto;
-  min-width: 1200px;
-  }
-}*/
+  margin: 266px auto;
+  margin-left: 464px;
+
+  border-radius: 10%;
+  background-color: white;
+
+  text-align: center;
+}
 
 
 
