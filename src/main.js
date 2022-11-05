@@ -50,6 +50,7 @@ VMdPreview.use(createAlignPlugin());
 
 const app=createApp(App)
 
+
 app.use(VueMarkdownEditor)
 app.use(VMdPreview)
 app.use(router)

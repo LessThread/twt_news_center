@@ -12,9 +12,7 @@
 
     <!-- 遮罩层 -->
     <div class="mask">
-      <div class="login-ui">
-        <p style="">登陆天外天</p>
-      </div>
+      <Login/>
     </div>
     <!-- <div class="err" style="position: absolute;text-align: center;background-color:#F7B888;width: 10vw;z-index: 6;" v-show="zoom">
       <p>您的浏览器缩放比例不是100%,可能会影响页面</p>
@@ -34,6 +32,7 @@ import navigationBar from '../components/navigationBar.vue'
 import titleBar from '../components/titleBar.vue'
 import LoginPop from '../components/loginPop.vue'
 import NavigationBarLite from '@/components/navigationBarLite.vue'
+import Login from '@/components/Login.vue'
 
 
 export default {
@@ -43,6 +42,7 @@ export default {
     titleBar,
     LoginPop,
     NavigationBarLite,
+    Login,
 },
 data() {
   return {
@@ -167,19 +167,7 @@ watch: {
 
 }
 
-.login-ui{
-  position: fixed;
-  width: 512px;
-  
 
-  margin: 266px auto;
-  margin-left: 464px;
-
-  border-radius: 10%;
-  background-color: white;
-
-  text-align: center;
-}
 
 
 
