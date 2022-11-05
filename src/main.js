@@ -33,6 +33,8 @@ import Prism from 'prismjs';
 import './utils/rem'
 
 
+import * as ElementPlusIconsVue from '@element-plus/icons-vue'
+
 
 
 VMdPreview.use(vuepressTheme, {
@@ -47,9 +49,10 @@ VueMarkdownEditor.use(createAlignPlugin());
 VMdPreview.use(createAlignPlugin());
 
 
-
-const app=createApp(App)
-
+const app = createApp(App)
+for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+  app.component(key, component)
+}
 
 app.use(VueMarkdownEditor)
 app.use(VMdPreview)

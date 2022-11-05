@@ -1,7 +1,8 @@
 <template>
     <div class="login-ui">
         <p class="title">登陆天外天</p>
-
+        <el-button type="primary" class="but-close"><el-icon><Close /></el-icon></el-button>
+        <br/>
         <el-input class="input-box" 
         v-model="username" 
         placeholder="请输入用户名" 
@@ -22,6 +23,8 @@
 </template>
 
 <script>
+import { Close } from '@element-plus/icons-vue';
+
 export default{
     data() {
         return {
@@ -52,12 +55,15 @@ export default{
 .title{
     margin-top: 30px;
     font-size:36px;
-
 }
 
 .input-box{
     margin-top: 25px;
     width: 452px;
     height: 50px;
+}
+
+.but-close{
+    display: f;
 }
 </style>

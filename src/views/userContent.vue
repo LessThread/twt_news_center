@@ -11,9 +11,9 @@
     </div>
 
     <!-- 遮罩层 -->
-    <div class="mask">
+    <!-- <div class="mask">
       <Login/>
-    </div>
+    </div> -->
     <!-- <div class="err" style="position: absolute;text-align: center;background-color:#F7B888;width: 10vw;z-index: 6;" v-show="zoom">
       <p>您的浏览器缩放比例不是100%,可能会影响页面</p>
     </div> -->
